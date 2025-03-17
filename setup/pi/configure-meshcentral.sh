@@ -29,7 +29,7 @@ cat <<EOF > /usr/local/mesh_services/meshagent/meshagentstartup.sh
 mkdir -p /var/log/nginx/meshagent
 chmod 700 /var/log/nginx/meshagent
 cp -rp /usr/local/mesh_services/meshagent/meshagent.db.tmp /var/log/nginx/meshagent/meshagent.db
-/usr/local/mesh_services/meshagent/meshagentstartup.sh --installedByUser=0
+/usr/local/mesh_services/meshagent/meshagent --installedByUser=0
 EOF
 chmod +x /usr/local/mesh_services/meshagent/meshagentstartup.sh
 
