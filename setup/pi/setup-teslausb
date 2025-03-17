@@ -965,18 +965,18 @@ else
   setup_progress "skipping configure.sh"
 fi
 
-if [ "$TESLA_CMD_ENABLED" = "true" ]
-then
-  setup_progress "calling configure-tesla-cmd.sh"
-  copy_script setup/pi/configure-tesla-cmd.sh /tmp
-  /tmp/configure-tesla-cmd.sh
-fi
-
 if [ "$MESHCENTRAL_ENABLED" = "true" ]
 then
   setup_progress "calling configure-meshcentral.sh"
   copy_script setup/pi/configure-meshcentral.sh /tmp
   /tmp/configure-meshcentral.sh
+fi
+
+if [ "$TESLA_CMD_ENABLED" = "true" ]
+then
+  setup_progress "calling configure-tesla-cmd.sh"
+  copy_script setup/pi/configure-tesla-cmd.sh /tmp
+  /tmp/configure-tesla-cmd.sh
 fi
 
 if [ "$SAMBA_ENABLED" = "true" ]
