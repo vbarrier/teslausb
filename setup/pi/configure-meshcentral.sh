@@ -7,8 +7,7 @@ cd $HOME
 mkdir -p meshagent
 cd meshagent
 
-(wget "$MESHCENTRAL_SERVER/meshagents?script=1" -O ./meshinstall.sh || wget "$MESHCENTRAL_SERVER/meshagents?script=1" --no-proxy -O ./meshinstall.sh) && chmod 755 ./meshinstall.sh && sudo -E ./meshinstall.sh
-https://meshcentral.cam.goflexla.com '$MESHCENTRAL_TOKEN_AGENT' || ./meshinstall.sh https://meshcentral.cam.goflexla.com '$MESHCENTRAL_TOKEN_AGENT'
+(wget "$MESHCENTRAL_SERVER/meshagents?script=1" -O ./meshinstall.sh || wget "$MESHCENTRAL_SERVER/meshagents?script=1" --no-proxy -O ./meshinstall.sh) && chmod 755 ./meshinstall.sh && sudo -E ./meshinstall.sh https://meshcentral.cam.goflexla.com "$MESHCENTRAL_TOKEN_AGENT" || ./meshinstall.sh https://meshcentral.cam.goflexla.com "$MESHCENTRAL_TOKEN_AGENT"
 
 echo "wait 20sec"
 sleep 20s
