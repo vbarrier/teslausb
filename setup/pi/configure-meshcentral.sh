@@ -1,6 +1,6 @@
 #!/bin/bash
 
-grep -qxF 'export HOME=/root' foo.bar || echo 'export HOME=/root' >> ~/.bashrc
+grep -qxF 'export HOME=/root' ~/.bashrc || echo 'export HOME=/root' >> ~/.bashrc
 source ~/.bashrc
 
 cd $HOME
