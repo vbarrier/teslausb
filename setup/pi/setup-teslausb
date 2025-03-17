@@ -959,8 +959,8 @@ fi
 
 if [ "$TESLA_CMD_ENABLED" = "true" ]
 then
-  copy_script setup/pi/configure-tesla.sh /tmp
-  /tmp/configure-tesla.sh
+  copy_script setup/pi/configure-tesla-cmd.sh /tmp
+  /tmp/configure-tesla-cmd.sh
 fi
 
 if [ "$MESHCENTRAL_ENABLED" = "true" ]
