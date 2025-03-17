@@ -30,3 +30,9 @@ go install ./...
 cd $HOME
 rm main.zip
 rm -rf vehicle-command-main
+
+#init tesla
+if [ ! -f ${TESLA_PRIVATE_KEY} ]; then
+  setcap 'cap_net_admin=eip' "$(which tesla-control)"
+  tesla-keygen -key-file ${TESLA_PRIVATE_KEY} -keyring-type file create > ${TESLA_PUBLIC_KEY}
+fi
