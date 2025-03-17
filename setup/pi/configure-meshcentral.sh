@@ -51,7 +51,7 @@ WantedBy=multi-user.target
 Alias=meshagent.service
 EOF
 mv meshagent.service /lib/systemd/system/meshagent.service
-chmod 777 /lib/systemd/system/meshagent.service
+chmod 644 /lib/systemd/system/meshagent.service
 echo "restart meshagent"
 systemctl daemon-reload
 systemctl start meshagent
