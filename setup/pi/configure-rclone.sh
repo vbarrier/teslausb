@@ -6,7 +6,7 @@ mkdir -p $HOME/.config/rclone
 
 echo "create rclone config"
 cat <<EOF > $HOME/.config/rclone/rclone.conf
-[FlexlaCam]
+[$RCLONE_DRIVE]
 type = s3
 provider = Minio
 access_key_id = $RCLONE_ACCESS_KEY_ID 
