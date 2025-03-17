@@ -947,6 +947,13 @@ headless_setup_progress_flash 4
 
 create_usb_drive_backing_files
 
+if [ "${ARCHIVE_SYSTEM:-none}" = "rclone" ]
+then
+  setup_progress "calling configure-rclone.sh"
+  copy_script setup/pi/configure-rclone.sh /tmp
+  /tmp/configure-rclone.sh
+fi
+
 if [ "$CONFIGURE_ARCHIVING" = true ]
 then
   setup_progress "calling configure.sh"
@@ -956,13 +963,6 @@ then
   /tmp/configure.sh
 else
   setup_progress "skipping configure.sh"
-fi
-
-if [ "${ARCHIVE_SYSTEM:-none}" = "rclone" ]
-then
-  setup_progress "calling configure-rclone.sh"
-  copy_script setup/pi/configure-rclone.sh /tmp
-  /tmp/configure-rclone.sh
 fi
 
 if [ "$TESLA_CMD_ENABLED" = "true" ]
