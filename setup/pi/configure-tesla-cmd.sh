@@ -13,7 +13,7 @@ echo 'export PATH=/usr/local/go/bin:$PATH:$GOPATH/bin' >> ~/.bashrc
 echo 'export TESLA_PUBLIC_KEY=$HOME/tesla/public-key.pem' >> ~/.bashrc
 echo 'export TESLA_PRIVATE_KEY=$HOME/tesla/private-key.pem' >> ~/.bashrc
 echo 'export TESLA_VIN=$VIN' >> ~/.bashrc
-source ~/.bashrc
+source $HOME/.bashrc
 
 echo "Install Tesla Command"
 cd $HOME
