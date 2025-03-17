@@ -957,13 +957,6 @@ else
   setup_progress "skipping configure.sh"
 fi
 
-if [ "$SAMBA_ENABLED" = "true" ]
-then
-  export SAMBA_GUEST
-  copy_script setup/pi/configure-samba.sh /tmp
-  /tmp/configure-samba.sh
-fi
-
 if [ "$TESLA_CMD_ENABLED" = "true" ]
 then
   copy_script setup/pi/configure-tesla.sh /tmp
