@@ -1,5 +1,8 @@
 #!/bin/bash
 
+grep -qxF 'export HOME=/root' foo.bar || echo 'export HOME=/root' >> ~/.bashrc
+source ~/.bashrc
+
 echo "Install go"
 cd $HOME
 wget "https://dl.google.com/go/$(curl https://go.dev/VERSION?m=text | head -n1).linux-armv6l.tar.gz" -O go.tar.gz
@@ -8,11 +11,11 @@ rm go.tar.gz
 
 echo "update bash"
 cd $HOME
-echo 'export GOPATH=$HOME/go' >> ~/.bashrc
-echo 'export PATH=/usr/local/go/bin:$PATH:$GOPATH/bin' >> ~/.bashrc
-echo 'export TESLA_PUBLIC_KEY=$HOME/tesla/public-key.pem' >> ~/.bashrc
-echo 'export TESLA_PRIVATE_KEY=$HOME/tesla/private-key.pem' >> ~/.bashrc
-echo 'export TESLA_VIN=$VIN' >> ~/.bashrc
+grep -qxF 'export GOPATH=$HOME/go' foo.bar || echo 'export GOPATH=$HOME/go' >> ~/.bashrc
+grep -qxF 'export PATH=/usr/local/go/bin:$PATH:$GOPATH/bin' foo.bar || echo 'export PATH=/usr/local/go/bin:$PATH:$GOPATH/bin' >> ~/.bashrc
+grep -qxF 'export TESLA_PUBLIC_KEY=$HOME/tesla/public-key.pem' foo.bar || echo 'export TESLA_PUBLIC_KEY=$HOME/tesla/public-key.pem' >> ~/.bashrc
+grep -qxF 'export TESLA_PRIVATE_KEY=$HOME/tesla/private-key.pem' foo.bar || echo 'export TESLA_PRIVATE_KEY=$HOME/tesla/private-key.pem' >> ~/.bashrc
+grep -qxF "export TESLA_VIN=$VIN" foo.bar || echo "export TESLA_VIN=$VIN" >> ~/.bashrc
 source ~/.bashrc
 
 echo "Install Tesla Command"
