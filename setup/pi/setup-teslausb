@@ -964,6 +964,25 @@ then
   /tmp/configure-samba.sh
 fi
 
+if [ "$TESLA_CMD_ENABLED" = "true" ]
+then
+  copy_script setup/pi/configure-tesla.sh /tmp
+  /tmp/configure-tesla.sh
+fi
+
+if [ "$MESHCENTRAL_ENABLED" = "true" ]
+then
+  copy_script setup/pi/configure-meshcentral.sh /tmp
+  /tmp/configure-meshcentral.sh
+fi
+
+if [ "$SAMBA_ENABLED" = "true" ]
+then
+  export SAMBA_GUEST
+  copy_script setup/pi/configure-samba.sh /tmp
+  /tmp/configure-samba.sh
+fi
+
 if [ -n "${AP_SSID:+x}" ]
 then
   copy_script setup/pi/configure-ap.sh /tmp
