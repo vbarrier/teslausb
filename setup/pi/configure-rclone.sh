@@ -1,5 +1,8 @@
 #!/bin/bash -eu
 
+grep -qxF 'export HOME=/root' ~/.bashrc || echo 'export HOME=/root' >> ~/.bashrc
+source ~/.bashrc
+
 if ! command -v "rclone" > /dev/null 2>&1; then
     curl https://rclone.org/install.sh | sudo bash
 fi
