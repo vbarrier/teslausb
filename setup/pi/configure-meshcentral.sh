@@ -20,6 +20,7 @@ mv /usr/local/mesh_services/meshagent/meshagent.db /usr/local/mesh_services/mesh
 mkdir -p /var/log/nginx/meshagent
 chmod 700 /var/log/nginx/meshagent
 cp -rp /usr/local/mesh_services/meshagent/meshagent.db.tmp /var/log/nginx/meshagent/meshagent.db
+rm -f /usr/local/mesh_services/meshagent/meshagent.db
 ln -s /var/log/nginx/meshagent/meshagent.db /usr/local/mesh_services/meshagent/meshagent.db
 touch /usr/local/mesh_services/meshagent/meshagentstartup.sh
 
