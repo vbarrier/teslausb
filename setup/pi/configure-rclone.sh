@@ -1,6 +1,6 @@
 #!/bin/bash -eu
 
-curl https://rclone.org/install.sh | sudo bash
+#curl https://rclone.org/install.sh | sudo bash
 
 mkdir -p $HOME/.config/rclone
 rm -f $HOME/.config/rclone/rclone.conf
