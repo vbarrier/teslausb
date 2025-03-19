@@ -12,7 +12,7 @@ function ping {
     if [[ ( -n "${TESLA_PRIVATE_KEY:+x}" ) ]]
     # Use Tesla Ble to keep car awake
     then
-      if timeout 10 /root/bin/tesla_ble_ping.py
+      if timeout 10 tesla-control -ble -key-file ${TESLA_PRIVATE_KEY} wake
       then
         sleep 90
       else
